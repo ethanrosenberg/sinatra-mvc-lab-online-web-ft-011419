@@ -11,14 +11,14 @@ class PigLatinizer
   vowels = %w[a e i o u]
   consonants = alpha - vowels
 
-  if vowels.include?(str[0])
-    str + 'ay'
-  elsif consonants.include?(str[0]) && consonants.include?(str[1])
-    str[2..-1] + str[0..1] + 'ay'
-  elsif consonants.include?(str[0])
-    str[1..-1] + str[0] + 'ay'
+  if vowels.include?(text[0])
+    text + 'ay'
+  elsif consonants.include?(text[0]) && consonants.include?(text[1])
+    text[2..-1] + text[0..1] + 'ay'
+  elsif consonants.include?(text[0])
+    text[1..-1] + text[0] + 'ay'
   else
-    str # return unchanged
+    text
   end
 end
 
