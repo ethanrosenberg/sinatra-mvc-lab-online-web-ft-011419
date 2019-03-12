@@ -3,10 +3,10 @@ class PigLatinizer
   attr_accessor :text
 
   def initialize(text)
-    @text = text.upcase
+    @text = convert(text)
   end
 
-  def convert
+  def convert(text)
     alpha = ('a'..'z').to_a
   vowels = %w[a e i o u]
   consonants = alpha - vowels
